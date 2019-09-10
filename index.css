@@ -1,0 +1,135 @@
+body,ul,li,p,span,a,img{
+     margin:0;
+     padding:0;
+}
+html,body{
+    width:100%;
+    height:800px;
+}
+.wrapper{
+    text-align: center;
+}
+.wrapper ul li{
+    position: relative;
+    display: inline-block;
+    width:200px;
+    height:150px;
+    margin-left:10px;
+    margin-top:10px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    box-shadow: 5px 5px 5px #ccc;
+    overflow: hidden;
+}
+.img-box{
+    width:100%;
+    height:100%;
+    text-align:center;
+    line-height:150px;
+}
+.img-box img{
+    width:100%;
+    height:100%;
+    background-size:100% 100%;
+    background-position:center center;
+}
+.img-box a{
+    text-decoration: none;
+    color:#ccc;
+    font-size:18px;
+}
+.img-box .box-shade{
+    display: none;
+    width:100%;
+    height:100%;
+    background:rgba(0, 0, 0, 0.3);
+}
+
+li .cover{
+    position: absolute;
+    width:100%;
+    height:100%;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+li .cover .in-top,
+li .cover .out-top {
+    transform: translate(0, -100%);
+}
+
+li .cover .in-right,
+li .cover .out-right {
+    transform: translate(100%, 0);
+}
+
+li .cover .in-bottom,
+li .cover .out-bottom {
+    transform: translate(0, 100%);
+}
+
+li .cover .in-left,
+li .cover .out-left {
+    transform: translate(-100%, 0);
+}
+
+li .cover .in-left,
+li .cover .in-right,
+li .cover .in-top,
+li .cover .in-bottom {
+    animation: inDes 0.3s linear forwards;
+}
+
+@keyframes inDes {
+    100% {
+        transform: translate(0, 0)
+    }
+}
+li .cover .out-top{
+    animation: outTop 0.3s linear;
+}
+@keyframes outTop{
+    0%{
+        transform: translate(0, 0); 
+    }
+    100%{
+    transform: translate(0,-100%); 
+    }
+}
+li .cover .out-right{
+    animation: outRight 0.3s linear;
+}
+@keyframes outRight{
+    0%{
+        transform:translate(0,0);
+    }
+    100%{
+        transform: translate(100%,0);
+    }
+}
+li .cover .out-bottom{
+    animation: outBottom 0.3s linear;
+}
+@keyframes outBottom{
+    0%{
+        transform:translate(0,0);
+    }
+    100%{
+        transform: translate(0,100%);
+    }
+}
+li .cover .out-left{
+    animation: outLeft 0.3s linear;
+}
+@keyframes outLeft{
+    0%{
+        transform: translate(0,0);
+    }
+    100%{
+        transform: translate(-100%,0);
+    }
+}
+
+
+
